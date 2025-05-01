@@ -1,0 +1,16 @@
+# Terraform local files
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/terraform.tfstate.lock.info
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Python cache (if any in scripts)
+__pycache__/
+*.pyc

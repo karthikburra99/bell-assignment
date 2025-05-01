@@ -48,6 +48,36 @@ The architecture emphasizes scalability, simplicity, and modularity, using Azure
 
 ---
 
+---
+
+## 💥 Bonus: Terraform Infrastructure Automation
+
+The project includes Terraform scripts to automate cloud resource setup.
+
+- **Infra components provisioned:**
+  - Resource Group (`telecom-assignment-rg`)
+  - Storage Account (`telecomdatalake123`) with ADLS Gen2
+  - Filesystem Container (`synapse-data`)
+  - Synapse Workspace (`telecom-synapse`)
+  - Firewall Rule (AllowAll)
+
+- **Azure region:**  
+  `East US 2` (due to SQL provisioning restrictions in East US)
+
+- **Import management:**  
+  Existing Azure resources were imported into Terraform state using:
+  ```
+  terraform import azurerm_resource_group.rg ...
+  terraform import azurerm_storage_account.storage ...
+  terraform import azurerm_storage_data_lake_gen2_filesystem.synapse_fs ...
+  terraform import azurerm_synapse_workspace.synapse ...
+  ```
+
+- **CI/CD automation:**  
+  GitHub Actions pipeline defined in `.github/workflows/terraform.yml` for plan/apply on push.
+
+---
+
 ## 📁 Folder Structure
 
 ```
@@ -64,19 +94,13 @@ bell-assignment/
 ├── outputs/
 │   ├── top_10_customers_improved.png
 │   └── avg_data_usage_by_plan_improved.png
+├── infra/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
 └── README.md
 ```
 
----
-
-## ✅ Key Highlights
-
-- Scalable, modular design for cloud ETL workflows  
-- Use of serverless SQL to avoid resource provisioning  
-- Visuals generated using Python (due to Power BI desktop limitations on macOS)  
-- Clean folder organization for reproducibility
-
----
 
 ## 📧 Contact
 

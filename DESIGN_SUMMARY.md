@@ -19,16 +19,11 @@ For this assignment, I implemented a scalable, modular ETL pipeline using Azure-
 
 - **Visualization**: Python (Matplotlib + Seaborn), since Power BI Desktop is unavailable on macOS. Charts are clear, minimal, and actionable.
 
+- **Infrastructure (Infra)**: Terraform scripts manage the deployment of cloud resources including Resource Group, Storage Account, ADLS Gen2 filesystem, Synapse Workspace, and firewall rules.GitHub Actions CI/CD pipeline is set up for automatic Terraform plan/apply on pushes.
+
 ## ⚙️ Design Considerations
 
 - **Scalability**: Blob + Serverless SQL can scale to 100K+ rows without architecture change.
 - **Maintainability**: Modular code, clean folder structure, extensible design.
 - **Cost Efficiency**: Fully serverless solution—ideal for ad-hoc analytics.
 
-## 🚀 Production Considerations
-
-- Add data validation + deduplication in ADF
-- Schedule pipelines with triggers
-- Add logging via Log Analytics
-- Publish Power BI dashboards
-- Manage infra with Terraform or Bicep
