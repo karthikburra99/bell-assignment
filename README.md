@@ -104,8 +104,7 @@ bell-assignment/
 
 ## 📧 Contact
 
-Karthik Burra  
-karthikburra99@gmail.com
+Karthik B
 https://www.linkedin.com/in/karthikburra/
 
 
